@@ -1,0 +1,80 @@
+\tikzfading[name=fade bottom, top color=eira_lightblue!0, bottom color=eira_lightblue!100]
+\mode<presentation>
+
+% Title page
+\defbeamertemplate*{title page}{isol}[1][]
+{ 
+        \setlength{\unitlength}{1mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Blue rectangle box
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{tikzpicture}[remember picture,overlay]
+      \node [rectangle, bottom color=eira_lightblue, top color=eira_lightblue!50!white, anchor=south, minimum width=\paperwidth, minimum height=4.8cm] (box) at (current page.south){};
+  \end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+        \begin{picture}(0,0)(0,0)
+            \put(-10,22){\includegraphics[width=.2\textwidth]{img/logos/eira_logo_vettoriale.pdf}}
+            
+            % Authors
+            \put(25,-33){%
+                \begin{minipage}[c][\paperwidth][c]{90mm}
+                \centering
+                    \ifx\insertauthor\empty\else
+                        \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\hspace{0.5mm}%
+                \end{minipage}
+            }
+            
+            % Date
+            \put(23.5,-39){
+                \begin{minipage}[c][\paperwidth][c]{90mm}
+                \centering
+                    \ifx\insertdate\empty\else
+                        \usebeamerfont{author}\usebeamercolor[fg]{author}\insertdate
+                \end{minipage}
+            }
+
+			%loghi
+			\put(100,26){\includegraphics[width=.35\textwidth]{img/logos/logolnl.pdf}}         
+			\put(35,-1){\includegraphics[width=.5\textwidth]{img/logos/eira_logo_vettoriale.pdf}}         
+                
+            % Title
+            \put(25,-18){%
+                \begin{minipage}[c][30mm][c]{90mm}
+                \ifx\inserttitle\empty\else
+                	\centering
+                    \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle%
+                \fi%
+                \end{minipage}
+            }
+                
+             % Subtitle
+            \put(25,-27){%
+                \begin{minipage}[c][30mm][c]{90mm}
+                \ifx\insertsubtitle\empty\else
+	                \centering
+                    \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle%
+                \fi%
+                \end{minipage}
+            }  
+            
+             % Institute
+            \put(25,-8.5){%
+                \begin{minipage}[c][30mm][c]{90mm}
+                \ifx\insertinstitute\empty\else
+                \centering
+                    \usebeamerfont{institute}\usebeamercolor[fg]{title}\insertinstitute
+                \fi%
+                \end{minipage}
+            }  
+            
+             
+            \put(53,-50){\includegraphics[width=.25\textwidth]{img/logos/isolpharm_logo_vettoriale.pdf}}             
+    \end{picture}
+}
+
+\mode
+<all>
+
+                    %\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle%
+                    %%

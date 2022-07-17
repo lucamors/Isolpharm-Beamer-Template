@@ -1,0 +1,178 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{animate}
+\usepackage{wasysym}
+\usepackage[column=0]{cellspace}
+\setlength\cellspacetoplimit{3pt}
+\setlength\cellspacebottomlimit{\cellspacetoplimit}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+
+\input{utils.tex}
+
+%--------------------------------------------------------------------------------------
+% Presentation Details
+%--------------------------------------------------------------------------------------
+\title[Presentation Short Title]{An awesome title for your beamer presentation}
+\subtitle{your short subtitle}
+\author{Author Name}
+\institute[LNL]{Laboratori Nazionali di Legnaro - INFN}
+\date{\today}
+
+%--------------------------------------------------------------------------------------
+% Setting ISOLPHARM Theme
+%--------------------------------------------------------------------------------------
+\usetheme{isol}
+\setbeamercovered{transparent}
+%--------------------------------------------------------------------------------------
+% Elements customization
+%--------------------------------------------------------------------------------------
+\setbeamertemplate{itemize item}{\color{eira_blue}\ding{229}}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\newcommand{\eitem}{\refstepcounter{enumi}\item[\ding{\numexpr\theenumi+201}]}
+
+\begin{document}
+
+%-----------------------------------------------------------------------------------------
+% TITLEPAGE
+%-----------------------------------------------------------------------------------------
+\begin{frame}[noframenumbering,plain]
+\titlepage
+\end{frame}
+
+%-----------------------------------------------------------------------------------------
+% Section : Outline
+%-----------------------------------------------------------------------------------------
+
+\begin{frame}{Outline}
+\onslide<1->{\tableofcontents[pausesubsections,pausesections]}
+\end{frame}
+
+%-----------------------------------------------------------------------------------------
+% Section : First Section
+%-----------------------------------------------------------------------------------------
+\section[Short Name 1]{Section 1 Title}
+
+\begin{frame}{Frame Title}{frame subtitle which can be longer}
+
+\begin{columns}[T]
+\begin{column}{.45\textwidth}
+Itemize is rendered as :
+
+\begin{itemize}
+\item first item
+\item another item
+\item last item
+\end{itemize}
+\end{column}%
+\hfill
+\begin{column}{.45\textwidth}
+while enumerate : 
+
+\begin{enumerate}
+\eitem first element
+\eitem second element
+\eitem third element
+\end{enumerate}
+
+\end{column}%
+\end{columns}
+
+\bigskip
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mauris condimentum, suscipit risus id, finibus velit. Suspendisse vel eros nunc. Vestibulum aliquet sapien sem, quis volutpat neque aliquet et. Donec finibus pulvinar fringilla. 
+
+\end{frame}
+
+%-----------------------------------------------------------------------------------------
+\section[Short Name 2]{Section 2 Title}
+%-----------------------------------------------------------------------------------------
+
+
+\begin{frame}{Intro to section 2}{Columns, Tables \& Formulas}
+
+\vspace{.5cm}
+
+This is a simple text with a formula:
+
+\begin{equation*}
+\int x \ dx = \dfrac{x^2}{2} + c
+\end{equation*}
+
+
+\begin{columns}[T]
+\begin{column}{.5\textwidth}
+\vspace{.25cm}
+\small
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mauris condimentum, suscipit risus id, finibus velit. Suspendisse vel eros nunc. Vestibulum aliquet sapien sem, quis volutpat neque aliquet et. Donec finibus pulvinar fringilla. 
+
+\end{column}
+\begin{column}{.5\textwidth}
+\small
+\begin{table}[h]
+\begin{tabular}{ccc}
+\toprule
+First Column & Second Column & Third Column \\
+\midrule
+some data & data1 & 1\\
+some data & data2 & 2\\
+some data & data3 & 3\\
+\bottomrule
+\end{tabular}
+\caption{Table caption.}
+\end{table}
+
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%-----------------------------------------------------------------------------------------
+\section[Short Name 3]{Section 3 Title}
+%-----------------------------------------------------------------------------------------
+
+
+\begin{frame}{Creating boxes}{using tcolorboxes}
+
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{example-image-a}
+\caption{Figure caption}
+\end{figure}
+
+\end{column}
+\begin{column}{.5\textwidth}
+
+\begin{tcolorbox}
+[colframe=eira_blue,
+colback=eira_blue!10,
+coltitle=white,
+title= Box Title]
+
+Some description text:
+
+\begin{itemize}
+\item Item 1
+\item Another cool item.
+\item This is the last point
+\end{itemize}
+
+\end{tcolorbox}
+
+\end{column}
+\end{columns}
+\end{frame}
+
+%-----------------------------------------------------------------------------------------
+
+\end{document}

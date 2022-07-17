@@ -1,0 +1,50 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{isol}[1][]{
+    \setlength{\unitlength}{1mm}
+    \begin{picture}(0,0)(0,0)
+        %author
+        
+        % Blue background
+        %\put(-10,-10){\color{eira_lightblue}\rule{\paperwidth}{20mm}}
+        % logo
+        \put(-12,-12){\includegraphics[scale=0.16]{img/logos/eira_logo_vettoriale.pdf}}
+        \put(100,-10){\includegraphics[width=.35\textwidth]{img/logos/logolnl.pdf}}      
+        \put(-10,-12){\color{eira_blue}\rule{\paperwidth}{0.4mm}}   
+        \put(-10,-18.3){\color{eira_blue}\rule{\paperwidth}{0.4mm}}   
+		\put(-10,-18){\color{eira_lightblue}\rule{\paperwidth}{6mm}}        
+		\put(-10,-15){\usebeamerfont{menu}\insertnavigation{\paperwidth}} 
+		
+        % Title
+        \put(25,-3){%
+            \begin{minipage}[c][\paperwidth][c]{75mm}
+            		\centering
+                \ifx\insertframetitle\empty\else
+                \usebeamerfont{title}\usebeamercolor[fg]{frametitle}\insertframetitle\par%
+                \fi%
+            \end{minipage}
+        }
+        
+        \put(25,-9){%
+            \begin{minipage}[c][\paperwidth][c]{75mm}
+            		\centering
+                \ifx\insertframetitle\empty\else
+                \usebeamerfont{subtitle}\usebeamercolor[fg]{title}\insertframesubtitle\par%
+                \fi%
+            \end{minipage}
+        }
+        
+	\put(-10,-80){\color{eira_blue}\rule{\paperwidth}{1mm}}        
+    \put(-10,-84){
+    \begin{minipage}[c][30mm][c]{155mm}
+	\usebeamerfont{footline}
+	   \usebeamerfont{author}\usebeamercolor[fg]{eira_blue}\insertauthor\hspace{1cm}\insertshorttitle\  \hfill\insertshortdate \hfill\insertinstitute \ \insertframenumber/\inserttotalframenumber
+
+    \end{minipage}
+  	}
+    \end{picture}
+    \vspace{1cm}
+}
+
+\mode<all>

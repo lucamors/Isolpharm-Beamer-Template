@@ -1,0 +1,26 @@
+%--------------------------------------------------------------------------------------
+% Danger symbol
+%--------------------------------------------------------------------------------------
+\newcommand*{\TakeFourierOrnament}[1]{{%
+\fontencoding{U}\fontfamily{futs}\selectfont\char#1}}
+\newcommand*{\danger}{\TakeFourierOrnament{66}}
+%--------------------------------------------------------------------------------------
+% Section Header Frame
+%--------------------------------------------------------------------------------------
+\AtBeginSection[]
+{
+  \setbeamercolor{background canvas}{bg=eira_blue!10}
+  \begin{frame}
+  \begin{huge}
+  {\color{eira_blue}\rule{.9\linewidth}{3pt}}
+  \medskip
+  \medskip 
+  
+  {\color{eira_blue} \textbf{\thesection} $\cdot$ \usebeamerfont{title}\insertsection}
+  \vspace{0.25cm}
+  \hspace{0.825cm}
+  \end{huge}
+  \end{frame}
+  \setbeamercolor{background canvas}{bg=white}
+}
+
